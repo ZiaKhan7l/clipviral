@@ -1,0 +1,92 @@
+# ⚡ ClipViral — Deploy Guide
+# Sirf 4 steps — 15 minute mein live!
+
+═══════════════════════════════════════
+STEP 1 — GROQ API KEY (FREE, 2 min)
+═══════════════════════════════════════
+
+1. Browser mein jao: https://console.groq.com
+2. "Sign Up" — Google se login kar lo
+3. Left menu mein "API Keys" click karo
+4. "Create API Key" click karo
+5. Key copy karo — gsk_xxxxxxxxxxxx wali
+   (Safe rakhna — sirf ek baar dikhti hai!)
+
+═══════════════════════════════════════
+STEP 2 — GITHUB (FREE, 3 min)
+═══════════════════════════════════════
+
+1. https://github.com pe account banao (agar nahi hai)
+2. "New Repository" click karo
+3. Name: clipviral-backend
+4. Public rakho
+5. "Create Repository" click karo
+6. Ab yeh files upload karo (drag & drop):
+   - app.py
+   - requirements.txt
+   - railway.json
+   - nixpacks.toml
+   - Procfile
+   - static/index.html  (pehle "static" folder banao)
+7. "Commit changes" click karo
+
+═══════════════════════════════════════
+STEP 3 — RAILWAY DEPLOY (FREE, 5 min)
+═══════════════════════════════════════
+
+1. https://railway.app jao
+2. "Start a New Project" click karo
+3. "Deploy from GitHub repo" choose karo
+4. Apna clipviral-backend repo select karo
+5. Deploy shuru ho jaega (2-3 min lagenge)
+
+6. Deploy hone ke baad:
+   → "Variables" tab mein jao
+   → "+ New Variable" click karo
+   → Name:  GROQ_API_KEY
+   → Value: gsk_xxxxx (jo copy kiya tha)
+   → Add karo
+
+7. "Settings" tab mein jao
+   → "Generate Domain" click karo
+   → Tumhara URL milega: xxxxx.up.railway.app
+
+═══════════════════════════════════════
+STEP 4 — TEST KARO (2 min)
+═══════════════════════════════════════
+
+1. Railway ka URL browser mein kholo
+2. ClipViral website dikhegi
+3. Koi bhi YouTube link paste karo
+4. "Detect" button dabao
+5. Video info aa jaegi — REAL!
+6. Settings choose karo
+7. "Generate" dabao — real clips banenge!
+8. Download karo — actual MP4 files!
+
+═══════════════════════════════════════
+IMPORTANT NOTES
+═══════════════════════════════════════
+
+✅ Groq FREE tier mein per day 14,400 seconds
+   audio transcription milti hai (bahut zyada!)
+
+✅ Railway FREE tier mein $5/month credit milta hai
+   (choti videos ke liye kaafi hai)
+
+✅ Pehli baar processing slow hogi (cold start)
+   — baad mein fast ho jaegi
+
+❌ Bahut lambi videos (2+ hour) mein timeout
+   aa sakta hai Railway free plan pe
+
+═══════════════════════════════════════
+PROBLEM? CHECK KARO:
+═══════════════════════════════════════
+
+Railway mein "Logs" tab se errors dekho.
+
+Common errors:
+- "GROQ_API_KEY not set" → Variable dobara add karo
+- "ffmpeg not found" → nixpacks.toml sahi se upload hua?
+- "Download failed" → URL private/restricted hai
